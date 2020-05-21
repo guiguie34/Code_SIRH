@@ -43,33 +43,38 @@ legend("topright",
 #Comment aborder le cours?
 
 table(NotionPref)
-barplot(table(NotionPref),ylab = "Effectif",xlab = "Manière",main = "Comment aborder les notions en cours ?",names.arg =c("Apprentissage théorique puis application","Etude de cas","Projet"), ylim=c(0,20) ) 
+barplot(table(NotionPref),ylab = "Effectif",xlab = "Manière",main = "Comment aborder les notions en cours ?", col = c("#E69F00", "#56B4E9", "#009E73"),names.arg =c("Apprentissage théorique puis application","Etude de cas","Projet"), ylim=c(0,20) ) 
 
 #Insister sur les notions
 
 table(Enseignant)
-barplot(table(Enseignant),ylab = "Effectif",xlab = "Avis",main = "Les enseignants doivent-ils plus insister sur les notions de cours ?", ylim=c(0,20) ) 
+barplot(table(Enseignant),ylab = "Effectif",xlab = "Avis",main = "Les enseignants doivent-ils plus insister sur les notions de cours ?", col = c("#ff0404", "#04ff15"), ylim=c(0,20) ) 
 
 #Interactivté des cours 
 table(Interactif)
 
 Interactif["Non il faut les rendre moins interactifs"] <- 0
-barplot(table(Interactif),ylab = "Effectif",xlab = "Opinion",main = "Faut-il rendre les cours davantage interactif ?", ylim=c(0,20) ) 
+barplot(table(Interactif),ylab = "Effectif",xlab = "Opinion",main = "Faut-il rendre les cours davantage interactif ?", ylim=c(0,20), col = c("#ff0000", "#ff7400","#09ff00","#e3ff00")) 
 
 
 #Enseignement mutuel
 
 a <-table(Mutuelle)
 #Mutuelle <-factor(Mutuelle,levels = c("Très mauvaise idée", "Mauvaise idée",  "Bonne idée", "Trés bonne idée"))
-barplot(table(Mutuelle),ylab = "Effectif",xlab = "Avis",names.arg =c("Bonne idée","Mauvaise idée","Trés bonne idée","Très mauvaise idée"),main = "Que pensez vous du principe de classe mutuelle ?", ylim=c(0,25) )
+barplot(table(Mutuelle),ylab = "Effectif",xlab = "Avis",names.arg =c("Bonne idée","Mauvaise idée","Trés bonne idée","Très mauvaise idée"),main = "Que pensez vous du principe de classe mutuelle ?", ylim=c(0,25),col = c("#e3ff00", "#ff7400","#09ff00","#ff0000") )
 
 #Volume langue étrangère
 
 table(Volume)
-barplot(table(Volume),ylab = "Effectif",xlab = "Opinion",main = "Faut-il ajouter plus de cours en langue étrangère ?", ylim=c(0,30) ) 
+barplot(table(Volume),ylab = "Effectif",xlab = "Opinion",main = "Faut-il ajouter plus de cours en langue étrangère ?",col = c("#ff0404", "#04ff15"), ylim=c(0,30) ) 
 
 #Confinement
 
 table(Confinement)
-barplot(table(Confinement),ylab = "Effectif",xlab = "Réponse",main = "Les enseignements durant la période de confinement vous semble-t-il bien construits ?", ylim=c(0,30) ) 
+barplot(table(Confinement),ylab = "Effectif",xlab = "Réponse",main = "Les enseignements durant la période de confinement vous semble-t-il bien construits ?", ylim=c(0,30),col = c("#ff7400", "#ff0000","#e3ff00","#09ff00") ) 
+
+#Distanciel
+
+table(Distanciel)
+barplot(table(Distanciel),ylab = "Effectif",xlab = "Réponse",main = "Cours non présentiel de manière permanente serait-il bénéfique pour votre scolarité ?", ylim=c(0,25),col = c("#ff0404", "#04ff15") ) 
 
